@@ -81,7 +81,7 @@ static void netif_status_changed(struct netif *netif, u8_t netif_state)
 		{
 			if(status_event->status_callback != NULL)
 			{
-				if (0 == tls_wifi_get_oneshot_flag())
+				if (0 == 0 /*tls_wifi_get_oneshot_flag()*/)
 				{
 					if (ip_addr_isany(netif_ip4_addr(netif)))
 					{

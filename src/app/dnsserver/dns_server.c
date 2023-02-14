@@ -268,8 +268,8 @@ void DNSS_RecvCb(void *Arg, struct udp_pcb *Pcb, struct pbuf *P, ip_addr_t *Addr
 		}
 
 		if ((_DnsCompareName(DnsServer.DnsName, pDnsName) != 0) &&
-		    !((1 == tls_wifi_get_oneshot_flag()) &&
-		     (2 == tls_wifi_get_oneshot_config_mode())))
+		    !((1 == 0 /*tls_wifi_get_oneshot_flag()*/) &&
+		     (2 == 0 /*tls_wifi_get_oneshot_config_mode()*/)))
 		{
 			/* Not my dns name, so notify the client name error. */
 #if TLS_CONFIG_AP

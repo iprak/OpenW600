@@ -42,9 +42,7 @@ SUBDIRS += \
 	$(TOP_DIR)/src/app/dnsserver	\
 	$(TOP_DIR)/src/app/httpclient	\
 	$(TOP_DIR)/src/app/matrixssl	\
-	$(TOP_DIR)/src/app/oneshotconfig	\
-	$(TOP_DIR)/src/app/ota			\
-	$(TOP_DIR)/src/app/web
+	$(TOP_DIR)/src/app/ota
 endif
 endif
 
@@ -66,9 +64,7 @@ COMPONENTS_$(TARGET) += \
 	$(TOP_DIR)/src/app/dnsserver/libdnsserver$(LIB_EXT)	\
 	$(TOP_DIR)/src/app/httpclient/libhttpclient$(LIB_EXT)	\
 	$(TOP_DIR)/src/app/matrixssl/libmatrixssl$(LIB_EXT)	\
-	$(TOP_DIR)/src/app/oneshotconfig/liboneshotconfig$(LIB_EXT)	\
-	$(TOP_DIR)/src/app/ota/libota$(LIB_EXT)	\
-	$(TOP_DIR)/src/app/web/libweb$(LIB_EXT)
+	$(TOP_DIR)/src/app/ota/libota$(LIB_EXT)
 endif
 
 
