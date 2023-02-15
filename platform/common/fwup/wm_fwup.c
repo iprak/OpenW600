@@ -42,7 +42,7 @@ static tls_os_queue_t *fwup_msg_queue = NULL;
 
 static u32 fwup_task_stk[FWUP_TASK_STK_SIZE];
 
-static u8 oneshotback = 0;
+//static u8 oneshotback = 0;
 static u8 *fwupwritebuffer = NULL;
 
 T_BOOTER imgheader[2];
@@ -398,9 +398,9 @@ static void fwup_scheduler(void *data)
 
 							TLS_DBGPRT_INFO("update the firmware successfully!\n");
 							fwup->current_state |= TLS_FWUP_STATE_COMPLETE;
-							if (oneshotback == 1){
-								tls_wifi_set_oneshot_flag(oneshotback);	// 恢复一键配置
-							}
+							//if (oneshotback == 1){
+							//	tls_wifi_set_oneshot_flag(oneshotback);	// 恢复一键配置
+							//}
 							
 						}
 					}
@@ -492,10 +492,10 @@ u32 tls_fwup_enter(enum tls_fwup_image_src image_src)
 	fwup->current_session_id = session_id;
 	fwup->busy = TRUE;
 	tls_os_release_critical(cpu_sr);	
-	oneshotback = tls_wifi_get_oneshot_flag();
-	if (oneshotback == 1){
-		tls_wifi_set_oneshot_flag(0);	// 退出一键配置
-	}
+	//oneshotback = tls_wifi_get_oneshot_flag();
+	//if (oneshotback == 1){
+	//	tls_wifi_set_oneshot_flag(0);	// 退出一键配置
+	//}
 
 	tls_wifi_set_psflag(FALSE, 0);
 
@@ -541,9 +541,9 @@ int tls_fwup_exit(u32 session_id)
 	fwup->busy = FALSE;	
 	tls_os_release_critical(cpu_sr);
 
-	if (oneshotback == 1){
-		tls_wifi_set_oneshot_flag(oneshotback); // 恢复一键配置
-	}
+	//if (oneshotback == 1){
+	//	tls_wifi_set_oneshot_flag(oneshotback); // 恢复一键配置
+	//}
 	tls_param_get(TLS_PARAM_ID_PSM, &enable, TRUE);	
 	tls_wifi_set_psflag(enable, 0);
 

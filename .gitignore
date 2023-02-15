@@ -24,8 +24,9 @@ Bin/*
 .vscode
 tools/makeimg
 tools/makeimg_all
-b_full.sh
 bin/w600/
-flashw600.sh
 sharedAppContainer/sharedApp/
 w600-gcc-arm/
+b_full.sh
+b_rebuild.sh
+
